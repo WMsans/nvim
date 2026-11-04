@@ -449,8 +449,13 @@ do
   vim.pack.add { gh 'folke/todo-comments.nvim' }
   require('todo-comments').setup { signs = false }
 
-  vim.pack.add { gh 'MeanderingProgrammer/render-markdown.nvim' }
-  require('render-markdown').setup {}
+  vim.pack.add {
+    {
+      src = 'https://github.com/StudentWeis/render-markdown.nvim',
+      version = 'd41aad87ddcabfaeb36c7d29d1fa119cb341068e',
+    },
+  }
+  require('render-markdown').setup { pipe_table = { full_grid = true } }
 
   -- [[ mini.nvim ]]
   --  A collection of various small independent plugins/modules
